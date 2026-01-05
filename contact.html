@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="https://images.unsplash.com/photo-1628527304948-06157ee3c8a6?q=80&w=32&h=32&auto=format&fit=crop" />
+    <title>Kontak Kami | BCA Simpan Pinjam</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <style>
+      /* Pengaturan utama agar footer mentok ke bawah */
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        background-color: #f8f9fa;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content-wrapper {
+        flex: 1 0 auto;
+      }
+
+      .navbar-bca {
+        background: #003a8f; /* Biru Gelap Khas BCA */
+      }
+
+      /* Animasi Muncul */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .entrance-animation {
+        animation: fadeInUp 0.6s ease-out forwards;
+      }
+
+      /* Gaya Card Kontak */
+      .contact-card {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        transition: transform 0.3s;
+        background: white;
+      }
+      .contact-card:hover {
+        transform: translateY(-5px);
+      }
+      .icon-box {
+        width: 50px;
+        height: 50px;
+        background: #e7f0ff;
+        color: #003a8f;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+      }
+
+      .btn-bca {
+        background: #003a8f;
+        color: white;
+        font-weight: bold;
+        transition: 0.3s;
+        padding: 12px;
+        border: none;
+      }
+      .btn-bca:hover {
+        background: #002a6f;
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      footer {
+        flex-shrink: 0;
+        background-color: #003a8f;
+        color: white;
+      }
+
+      .navbar-brand img {
+        border-radius: 4px;
+        object-fit: cover;
+      }
+
+      /* Map Placeholder */
+      .map-container {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        height: 300px;
+        background: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-dark navbar-bca sticky-top shadow-sm">
+        <div class="container-fluid">
+          <img src="https://images.unsplash.com/photo-1613243555988-441166d4d6fd?q=80&w=100&h=100&auto=format&fit=crop" alt="BCA Logo" width="35" height="35" class="me-2" />
+          <a class="navbar-brand fw-bold ms-2">BCA SIMPAN PINJAM</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">Tentang Kami</a></li>
+              <li class="nav-item"><a class="nav-link" href="transaksi.html">Data Transaksi</a></li>
+              <li class="nav-item"><a class="nav-link" href="form.html">Form Pengajuan</a></li>
+              <li class="nav-item"><a class="nav-link active" href="contact.html">Kontak Kami</a></li>
+              <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container my-5 entrance-animation">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold text-primary">Hubungi Kami</h2>
+          <p class="text-muted">Kami siap melayani kebutuhan perbankan Anda 24/7</p>
+        </div>
+
+        <div class="row g-4 mb-5">
+          <div class="col-md-4">
+            <div class="card contact-card p-4 text-center">
+              <div class="icon-box mx-auto"><i class="bi bi-geo-alt"></i></div>
+              <h5 class="fw-bold">Alamat Kantor</h5>
+              <p class="text-muted small mb-0">Menara BCA, Grand Indonesia<br />Jl. MH Thamrin No. 1, Jakarta</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card contact-card p-4 text-center">
+              <div class="icon-box mx-auto"><i class="bi bi-envelope"></i></div>
+              <h5 class="fw-bold">Email Support</h5>
+              <p class="text-muted small mb-0">halobca@bca.co.id<br />support.simpanpinjam@bca.com</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card contact-card p-4 text-center">
+              <div class="icon-box mx-auto"><i class="bi bi-telephone"></i></div>
+              <h5 class="fw-bold">Halo BCA</h5>
+              <p class="text-muted small mb-0">1500888<br />(021) 235 88000</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 mb-5">
+            <div class="card contact-card p-4 p-md-5">
+              <h4 class="fw-bold mb-4 text-primary">Kirim Pesan</h4>
+              <form>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold">Nama</label>
+                    <input type="text" class="form-control" placeholder="Nama Lengkap" required />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold">Email</label>
+                    <input type="email" class="form-control" placeholder="alamat@email.com" required />
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label small fw-bold">Pesan</label>
+                    <textarea class="form-control" rows="4" placeholder="Tuliskan pertanyaan atau kendala Anda..." required></textarea>
+                  </div>
+                  <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-bca w-100 rounded-3"><i class="bi bi-send me-2"></i>Kirim Sekarang</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-5">
+            <div class="map-container">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop" alt="Office" style="width: 100%; height: 100%; object-fit: cover" />
+            </div>
+            <div class="mt-3 p-3 bg-white rounded shadow-sm border-start border-primary border-4">
+              <h6 class="fw-bold mb-1">Jam Operasional:</h6>
+              <p class="small text-muted mb-0">Senin - Jumat: 08:00 - 17:00<br />Sabtu - Minggu: Tutup (Layanan Digital 24 Jam)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-center py-4">
+      <div class="container">
+        <p class="mb-0">© 2026 BCA Simpan Pinjam | Layanan Perbankan Digital</p>
+        <small>By : Nicolas Aldi Pratama</small>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

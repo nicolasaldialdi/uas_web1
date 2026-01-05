@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="https://images.unsplash.com/photo-1628527304948-06157ee3c8a6?q=80&w=32&h=32&auto=format&fit=crop" />
+    <title>Form Pengajuan | BCA Simpan Pinjam</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <style>
+      /* --- Pengaturan Sticky Footer --- */
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        background-color: #f8f9fa;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content-wrapper {
+        flex: 1 0 auto;
+      }
+
+      .navbar-bca {
+        background: #003a8f; /* Biru Gelap Khas BCA */
+      }
+
+      /* Animasi Muncul */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .entrance-animation {
+        animation: fadeInUp 0.6s ease-out forwards;
+      }
+
+      /* Desain Form */
+      .card-form {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+      .form-label {
+        font-weight: 500;
+        color: #444;
+        font-size: 0.9rem;
+      }
+
+      .btn-bca {
+        background-color: #003a8f;
+        color: white;
+        border: none;
+        padding: 12px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      .btn-bca:hover {
+        background-color: #002a6f;
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-back {
+        background-color: #e9ecef;
+        color: #495057;
+        font-weight: bold;
+        padding: 12px;
+        transition: 0.3s;
+        border: none;
+        text-decoration: none;
+        display: block;
+      }
+      .btn-back:hover {
+        background-color: #dee2e6;
+        color: #212529;
+      }
+
+      footer {
+        flex-shrink: 0;
+        background-color: #003a8f;
+        color: white;
+      }
+
+      .navbar-brand img {
+        border-radius: 4px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-dark navbar-bca sticky-top shadow-sm">
+        <div class="container-fluid">
+          <img src="https://images.unsplash.com/photo-1613243555988-441166d4d6fd?q=80&w=100&h=100&auto=format&fit=crop" alt="BCA Logo" width="35" height="35" class="me-2" />
+          <a class="navbar-brand fw-bold ms-2">BCA SIMPAN PINJAM</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">Tentang Kami</a></li>
+              <li class="nav-item"><a class="nav-link" href="transaksi.html">Data Transaksi</a></li>
+              <li class="nav-item"><a class="nav-link active" href="form.html">Form Pengajuan</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Kontak Kami</a></li>
+              <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container my-5 entrance-animation">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="card card-form p-4">
+              <div class="text-center mb-4">
+                <i class="bi bi-wallet2 fs-1 text-primary"></i>
+                <h4 class="fw-bold text-primary mt-2">Pengajuan Pinjaman</h4>
+                <p class="text-muted small">Lengkapi data di bawah ini untuk memproses pinjaman Anda.</p>
+              </div>
+
+              <form id="formLoan" action="#" method="POST">
+                <div class="mb-3">
+                  <label class="form-label">Nama Lengkap</label>
+                  <input type="text" id="inputNama" class="form-control" placeholder="Masukkan nama sesuai KTP" required />
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Nomor WhatsApp</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-whatsapp"></i></span>
+                    <input type="tel" id="inputWA" class="form-control" placeholder="0812xxxxxxxx" required />
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Jumlah Pinjaman</label>
+                  <div class="input-group">
+                    <span class="input-group-text">Rp</span>
+                    <input type="number" id="inputJumlah" class="form-control" placeholder="Contoh: 5000000" required />
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label class="form-label">Jangka Waktu</label>
+                  <select id="selectDurasi" class="form-select" required>
+                    <option value="" selected disabled>Pilih durasi tenor</option>
+                    <option value="12 Bulan">12 Bulan</option>
+                    <option value="24 Bulan">24 Bulan</option>
+                    <option value="36 Bulan">36 Bulan</option>
+                  </select>
+                </div>
+
+                <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-bca rounded-3"><i class="bi bi-send-fill me-2"></i>Kirim Pengajuan</button>
+                  <a href="transaksi.html" class="btn btn-back rounded-3 text-center"> Kembali ke Data Transaksi </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   <footer class="text-center py-4 text-white">
+      <div class="container">
+        <p class="mb-0">© 2026 BCA Simpan Pinjam | Layanan Perbankan Digital</p>
+        <small>By : Nicolas Aldi Pratama</small>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      const loanForm = document.getElementById("formLoan");
+
+      loanForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const nama = document.getElementById("inputNama").value.trim();
+        const wa = document.getElementById("inputWA").value.trim();
+        const jumlah = document.getElementById("inputJumlah").value.trim();
+        const durasi = document.getElementById("selectDurasi").value;
+
+        if (nama !== "" && wa !== "" && jumlah !== "" && durasi !== null) {
+          alert(
+            "PENGAJUAN BERHASIL!\n\nHalo " +
+              nama +
+              ",\nPermohonan pinjaman Anda sebesar Rp " +
+              parseInt(jumlah).toLocaleString("id-ID") +
+              " dengan jangka waktu " +
+              durasi +
+              " akan segera kami tinjau. Tim kami akan menghubungi melalui WhatsApp: " +
+              wa
+          );
+          loanForm.reset();
+        } else {
+          alert("PENGAJUAN GAGAL!\nHarap isi semua data dengan benar sebelum mengirim.");
+        }
+      });
+    </script>
+  </body>
+</html>
